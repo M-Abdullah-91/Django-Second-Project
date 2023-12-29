@@ -13,7 +13,7 @@ class AuthorModel(models.Model):
 class PostModel(models.Model):
     title = models.CharField(max_length=200)
     desc = models.TextField()
-    author = models.ForeignKey(AuthorModel, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(AuthorModel, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
