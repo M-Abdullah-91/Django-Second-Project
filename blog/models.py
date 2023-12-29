@@ -5,8 +5,9 @@ from django.contrib.auth.models import User
 class AuthorModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    first_name = models.CharField(max_length=200, default="")
-    last_name = models.CharField(max_length=200, default="")
+
+    def __str__(self):
+        return self.user.username
 
     def __str__(self):
         return self.first_name +" "+ self.last_name
